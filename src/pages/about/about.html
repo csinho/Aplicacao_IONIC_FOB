@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-navbar>
+    <h2 class="text_titulo">Faça sua Pesquisa</h2>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item padding no-lines>
+    <ion-label style="font-size: 20px; color: rgb(1, 2, 27);">Por Mês:</ion-label>
+    <ion-icon name="md-calendar" color="plmd" item-start></ion-icon>
+    <ion-select [(ngModel)]="mes_model" class="selector">
+      <ion-option *ngFor="let item of Meses" [value]="item">
+        <p><b>{{item.mes}}</b></p>
+      </ion-option>
+    </ion-select>
+  </ion-item>
+  <button ion-button clear full (click)="mes_escolhido()"><span style="color: white">Buscar cargas deste
+      Mês</span></button>
+  <div class="linha"></div>
+
+  <div cards>
+    <div class="grid-full">
+      <ion-row>
+        <ion-col class="animated fadeInDownBig">
+          <ion-card (click)="getCte()" class="container">
+            <h1>
+              <ion-icon name="md-paper" color="primary"></ion-icon>
+            </h1>
+            <p>Buscar por Ct-e</p>
+          </ion-card>
+        </ion-col>
+        <ion-col class="animated fadeInDownBig">
+          <ion-card (click)="getNfe()" class="container">
+            <h1>
+              <ion-icon name="md-barcode" color="primary"></ion-icon>
+            </h1>
+            <p>Buscar por NF-e</p>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+  <div class="linha_"></div>
+
+  <div cards1>
+    <div class="grid-full1">
+      <ion-row>
+        <ion-col class="animated flipInY">
+          <ion-card (click)="tela()" class="container4">
+            <h1>
+              <ion-icon name="ios-people" color="primary"></ion-icon>
+            </h1>
+            <p>Cliente</p>
+          </ion-card>
+        </ion-col>
+        <ion-col class="animated flipInY">
+          <ion-card (click)="telaMotorista()" class="container4">
+            <h1>
+              <ion-icon name="md-contact" color="primary"></ion-icon>
+            </h1>
+            <p>Motorista</p>
+          </ion-card>
+        </ion-col>
+        <ion-col class="animated fadeInUp">
+          <ion-card (click)="getOntem()" class="container4">
+            <h1 class="antes">
+              <ion-icon name="md-arrow-round-back" color="primary"></ion-icon>
+            </h1>
+            <p>Ontem</p>
+          </ion-card>
+        </ion-col>
+        <ion-col class="animated fadeInUp">
+          <ion-card (click)="getAmanha()" class="container4">
+            <h1>
+              <ion-icon name="md-arrow-round-forward" color="primary"></ion-icon>
+            </h1>
+            <p>Amanhã</p>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <ion-row>
+    <ion-col class="animated fadeInUp">
+      <ion-card class="container_data" (click)="pegarData()">
+        <h1>
+          <ion-icon name="ios-calendar" color="primary"></ion-icon>
+        </h1>
+        <p>Buscar por Data</p>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

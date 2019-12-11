@@ -1,0 +1,56 @@
+page-escolha-mes {
+  .detalhes {
+    background-color: rgba(1, 5, 46, 0.945);
+  }
+  .bot {
+    margin-top: 5%;
+    padding: 30% 10% 5% 10%;
+    box-shadow: 0 2px 4px 0 rgba(30, 84, 184, 0.671);
+    position: relative;
+  }
+  .text{
+    font-weight: 1000;
+    font-size: 80%;
+    color: rgb(2, 1, 27);
+    text-align: left;
+  }
+  .text_titulo {
+    font-weight: 100;
+    color: #fff;
+    text-align: center;
+    font-family: serif;
+    position: relative;
+    margin-top: 5%;
+  }
+
+  .item_cli{
+    position: relative;
+    top: -100px;
+  }
+  .item_cid{
+    position: relative;
+    top: -70px;
+  }
+  .item_mes{
+    position: relative;
+    top: -40px;
+  }
+  .linha {
+    margin-bottom: 15px;
+    width: 150px;/*Altura da linha*/
+    border: 1px solid; /* Adiciona borda esquerda na div como ser fosse uma linha.*/
+    color: rgba(0, 181, 205, 0.582);
+  }
+  
+  .selector {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: 0.1px;
+    color: #000925;
+    width: 60% !important;
+    max-width: 60% !important;
+    justify-content: center;
+    text-align: center;
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "FOB",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,127 @@
+<ion-content class="detalhes">
+  <div class="t">
+  </div>
+  <ion-scroll scrollY="true">
+    <ion-card>
+      <div *ngIf="DADOS.Embarque_Efetivo !== '' ">
+        <ion-fab right top>
+          <button color="secondary" mini ion-fab>
+            <ion-icon name="md-checkmark-circle-outline"></ion-icon>
+          </button>
+        </ion-fab>
+      </div>
+      <div *ngIf="DADOS.Embarque_Efetivo === '' ">
+        <ion-fab left top>
+          <button color="danger" mini ion-fab>
+            <ion-icon name="ios-pulse-outline"></ion-icon>
+          </button>
+        </ion-fab>
+      </div>
+      <ion-card-content class="detalhes_card">
+        <ion-card-title>
+          <div *ngIf="nome_CTE === 'CTE'">
+            <h1>Dados do CT-e</h1>
+          </div>
+          <div *ngIf="nome_CTE !== 'CTE'">
+            <h1>Dados do NF-e</h1>
+          </div>
+        </ion-card-title>
+        <div class="linha"></div>
+
+        <div class="dados" *ngIf="DADOS">
+          <div *ngIf="nome_CTE === 'CTE'">
+            <h2>Ct-e:</h2>
+            <label>{{DADOS.Cte}}</label>
+            <h2>Nf-e:</h2>
+            <p>{{DADOS.Nfe}}</p>
+          </div>
+          <div *ngIf="nome_CTE !== 'CTE'">
+            <h2>Nf-e:</h2>
+            <label>{{DADOS.Nfe}}</label>
+            <h2>Ct-e:</h2>
+            <p>{{DADOS.Cte}}</p>
+          </div>
+          <h2>Cliente:</h2>
+          <p>{{DADOS.Cliente}}</p>
+          <h2>Origem e Destino:</h2>
+          <p>{{DADOS.Cidade_Origem}}
+            /{{DADOS.Uf_Origem}}
+            &nbsp;X&nbsp;{{DADOS.Cidade_Destino}}
+            /{{DADOS.Uf_Destino}}
+          </p>
+          <ion-row>
+            <ion-col>
+              <h2>Peso Programado:</h2>
+              <p style="font-size: 18px; color: rgb(4, 3, 56);">{{DADOS.Peso_Programado}}&nbsp;ton</p>
+            </ion-col>
+            <ion-col>
+              <h2>Peso Carregado:</h2>
+              <p style="font-size: 20px; color: rgb(10, 185, 77);">{{DADOS.Peso_Carregado}}&nbsp;ton</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <h2>Previsão da Entrega:</h2>
+              <p style="font-size: 18px; color: rgb(4, 3, 56);">{{data}}</p>
+            </ion-col>
+            <ion-col>
+              <h2>Descarga Efetiva:</h2>
+              <p style="font-size: 20px; color: rgb(10, 185, 77);">{{data_descarga}}</p>
+            </ion-col>
+          </ion-row>
+          <div class="linha_mot"></div>
+          <h2>Motorista:</h2>
+          <p>{{DADOS.Motorista}}</p>
+          <h2>Contato: </h2>
+          <a ion-item botton href="tel:`{{DADOS.Telefone}}`">
+            <p>{{DADOS.Telefone}}</p>
+            <ion-icon name="md-call" color="primary" item-end></ion-icon>
+          </a>
+          <h2>Placas dos Veículos: </h2>
+          <p>{{DADOS.Placa}}</p>
+          <h2>Localização:&nbsp;<label>{{DADOS.Localizacao}}</label></h2>
+          <h2>Situação Seguradora:</h2>
+          <div *ngIf="s === 'Recomendado'">
+            <p style="font-size: 20px; color: rgb(10, 185, 77);">
+              {{seguradora}}
+            </p>
+          </div>
+          <div *ngIf="s === 'Não Recomendado'">
+            <p style="font-size: 20px; color: rgb(243, 59, 59);">
+              {{seguradora}}
+            </p>
+          </div>
+          <div *ngIf="s === 'Enviar Ficha'">
+            <p style="font-size: 20px; color: rgb(1, 1, 17);">
+              {{seguradora}}
+            </p>
+          </div>
+          <div *ngIf="s === 'Reenviar'">
+            <p style="font-size: 20px; color: rgb(219, 21, 226);">
+              {{seguradora}}
+            </p>
+          </div>
+          <div *ngIf="s === 'Doc. Pendente'">
+            <p style="font-size: 20px; color: rgb(64, 48, 207);">
+              {{seguradora}}
+            </p>
+          </div>
+          <div *ngIf="s === 'Em Análise'">
+            <p style="font-size: 20px; color: rgb(202, 130, 47);">
+              {{seguradora}}
+            </p>
+          </div>
+          <div *ngIf="s === ''">
+            <p style="font-size: 20px; color: rgb(0, 0, 0);">
+              {{seguradora}}
+            </p>
+          </div>
+        </div>
+
+      </ion-card-content>
+    </ion-card>
+  </ion-scroll>
+  <ion-buttons>
+    <button class="bt" ion-button block color="plmd" (click)="fecharModal()">OK</button>
+  </ion-buttons>
+</ion-content>

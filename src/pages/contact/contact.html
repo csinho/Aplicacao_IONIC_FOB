@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar>
+    <h2 class="featured-text">Dados</h2>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card class="animated fadeInRight">
+    <ion-card-header>
+      Balanço do Mês:<b>&nbsp;{{mes_atual}}</b>
+    </ion-card-header>
+    <div width="1000" height="1000">
+      <div style="display: block">
+        <canvas baseChart [data]="doughnutChartData_0" [labels]="doughnutChartLabels_0"
+          [chartType]="doughnutChartType_0"></canvas>
+      </div>
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let text of doughnutChartLabels_0 ">
+            <div>{{text}}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col *ngFor="let val of doughnutChartData_0 ">
+            <div><b>{{val}}</b></div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-card>
+  <ion-card class="animated fadeInLeft">
+    <ion-card-header>
+      Balanço de Viagens Mensal
+    </ion-card-header>
+    <div width="1000" height="1000">
+      <div style="display: block">
+        <canvas baseChart [data]="doughnutChartData_1" [labels]="doughnutChartLabels_1"
+          [chartType]="doughnutChartType_1"></canvas>
+      </div>
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let text of doughnutChartLabels_1 ">
+            <div>{{text}}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col *ngFor="let val of doughnutChartData_1 ">
+            <div><b>{{val}}</b></div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-card>
+  <ion-card class="animated fadeInUp">
+    <ion-card-header>
+      Balanço de Peso Diário:&nbsp;<b>{{data_Atual}}</b>
+    </ion-card-header>
+    <div width="1000" height="1000">
+      <div style="display: block">
+        <canvas baseChart [data]="doughnutChartData_2" [labels]="doughnutChartLabels_2"
+          [chartType]="doughnutChartType_2"></canvas>
+      </div>
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let text of doughnutChartLabels_2 ">
+            <div>{{text}}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col *ngFor="let val of doughnutChartData_2 ">
+            <div><b>{{val}}</b></div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-card>
+
+</ion-content>

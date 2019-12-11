@@ -1,0 +1,42 @@
+page-contact {
+  .toolbar-background {
+    background: black;
+    border: none !important;
+  }
+
+  .featured-text {
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    font-family: sans-serif;
+  }
+
+  .text {
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    font-family: sans-serif;
+  }
+  ion-card {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    padding-top: 2px;
+  }
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 1.0em;
+    width: 100%;
+    font-weight: bold;
+    color: rgb(3, 7, 58);
+  }
+
+  .card-subtitle {
+    font-size: 1.3em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: rgb(1, 9, 83);
+  }
+}

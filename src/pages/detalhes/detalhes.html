@@ -1,0 +1,115 @@
+<ion-content class="detalhes">
+  <div class="t">
+  </div>
+  <ion-scroll scrollY="true">
+    <ion-card>
+      <div *ngIf="detalhes_cliente.Embarque_Efetivo !== '' ">
+        <ion-fab right top>
+          <button color="secondary" mini ion-fab>
+            <ion-icon name="md-checkmark-circle-outline"></ion-icon>
+          </button>
+        </ion-fab>
+      </div>
+      <div *ngIf="detalhes_cliente.Embarque_Efetivo === '' ">
+        <ion-fab left top>
+          <button color="danger" mini ion-fab>
+            <ion-icon name="ios-pulse-outline"></ion-icon>
+          </button>
+        </ion-fab>
+      </div>
+      <ion-card-content class="detalhes_card">
+        <ion-card-title>
+          <h1>Dados do Transporte</h1>
+        </ion-card-title>
+        <div class="linha"></div>
+        <div text-justify>
+          <div class="dados" *ngIf="detalhes_cliente">
+            <h2>Cliente:</h2>
+            <p>{{detalhes_cliente.Cliente}}</p>
+            <h2>Origem e Destino:</h2>
+            <p>{{detalhes_cliente.Cidade_Origem}}
+              /{{detalhes_cliente.Uf_Origem}}
+              &nbsp;X&nbsp;{{detalhes_cliente.Cidade_Destino}}
+              /{{detalhes_cliente.Uf_Destino}}
+            </p>
+            <ion-row>
+              <ion-col>
+                <h2>Peso Programado:</h2>
+                <p style="font-size: 18px; color: rgb(4, 3, 56);">{{detalhes_cliente.Peso_Programado}}&nbsp;ton</p>
+              </ion-col>
+              <ion-col>
+                <h2>Peso Carregado:</h2>
+                <p style="font-size: 20px; color: rgb(10, 185, 77);">{{detalhes_cliente.Peso_Carregado}}&nbsp;ton</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <h2>Previsão de Entrega:</h2>
+                <p style="font-size: 20px; color: rgb(4, 49, 21);">{{data}}</p>
+              </ion-col>
+              <ion-col>
+                <h2>Descarga Efetiva:</h2>
+                <p style="font-size: 20px; color: rgb(10, 185, 77);">{{data_descarga}}</p>
+              </ion-col>
+            </ion-row>
+            <div class="linha_mot"></div>
+            <h2>Motorista:</h2>
+            <p>{{detalhes_cliente.Motorista}}</p>
+            <h2>Contato: </h2>
+            <a ion-item botton href="tel:`{{detalhes_cliente.Telefone}}`">
+              <p>{{detalhes_cliente.Telefone}}</p>
+              <ion-icon name="md-call" color="primary" item-end></ion-icon>
+            </a>
+            <h2>Placas dos Veículos: </h2>
+            <p>{{detalhes_cliente.Placa}}</p>
+            <h2>Situação Seguradora:</h2>
+            <div *ngIf="s === 'Recomendado'">
+              <p style="font-size: 20px; color: rgb(10, 185, 77);">
+                {{seguradora}}
+              </p>
+            </div>
+            <div *ngIf="s === 'Não Recomendado'">
+              <p style="font-size: 20px; color: rgb(243, 59, 59);">
+                {{seguradora}}
+              </p>
+            </div>
+            <div *ngIf="s === 'Enviar Ficha'">
+              <p style="font-size: 20px; color: rgb(1, 1, 17);">
+                {{seguradora}}
+              </p>
+            </div>
+            <div *ngIf="s === 'Reenviar'">
+              <p style="font-size: 20px; color: rgb(219, 21, 226);">
+                {{seguradora}}
+              </p>
+            </div>
+            <div *ngIf="s === 'Doc. Pendente'">
+              <p style="font-size: 20px; color: rgb(64, 48, 207);">
+                {{seguradora}}
+              </p>
+            </div>
+            <div *ngIf="s === 'Em Análise'">
+              <p style="font-size: 20px; color: rgb(202, 130, 47);">
+                {{seguradora}}
+              </p>
+            </div>
+            <div *ngIf="s === ''">
+              <p style="font-size: 20px; color: rgb(0, 0, 0);">
+                {{seguradora}}
+              </p>
+            </div>
+            <div class="linha_man"></div>
+            <h3>Dados do Manifesto</h3>
+            <h2>Ct-e:&nbsp;<label>{{detalhes_cliente.Cte}}</label></h2>
+            <h2>Nf-e:&nbsp;<label>{{detalhes_cliente.Nfe}}</label></h2>
+            <h2>Localização:&nbsp;<label>{{detalhes_cliente.Localizacao}}</label></h2>
+          </div>
+        </div>
+
+      </ion-card-content>
+    </ion-card>
+  </ion-scroll>
+  <ion-buttons>
+    <button class="bt" ion-button block color="plmd" (click)="fecharModal()">OK</button>
+  </ion-buttons>
+</ion-content>

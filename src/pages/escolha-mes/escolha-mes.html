@@ -1,0 +1,56 @@
+<ion-content class="detalhes" padding (click)="fecharModal()">
+
+  <div *ngIf="escolhaCli === 'cliente'">
+    <div class="text_titulo">
+      <h2>Escolha o Cliente</h2>
+    </div>
+    <div class="bot">
+      <ion-item class="item_cli">
+        <ion-label class="text">Escolha o Cliente:</ion-label>
+        <ion-select [(ngModel)]="cliente_model" class="selector">
+          <ion-option *ngFor="let item of clientes_BD" [value]="item">
+            <h1 class="h1">{{item}}</h1>
+          </ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="item_mes">
+        <ion-label class="text">Escolha o Mês:</ion-label>
+        <ion-select [(ngModel)]="mes_model">
+          <ion-option *ngFor="let item of Meses" [value]="item" class="selector">
+            <p><b>{{item.mes}}</b></p>
+          </ion-option>
+        </ion-select>
+      </ion-item>
+      <div class="linha"></div>
+      <button ion-button full (click)="okCli()">OK</button>
+    </div>
+  </div>
+
+  <div *ngIf="escolhaMot === 'motorista'">
+    <div class="text_titulo">
+      <h2>Escolha o Motorista</h2>
+    </div>
+    <div class="bot">
+      <ion-item class="item_cli">
+        <ion-label class="text">Escolha o Motorista:</ion-label>
+        <ion-select [(ngModel)]="motorista_model" class="selector">
+          <ion-option *ngFor="let item of motorista_BD" [value]="item">
+            <h1 class="h1">{{item}}</h1>
+          </ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="item_mes">
+        <ion-label class="text">Escolha o Mês:</ion-label>
+        <ion-select [(ngModel)]="mes_model">
+          <ion-option *ngFor="let item of Meses" [value]="item" class="selector">
+            <p><b>{{item.mes}}</b></p>
+          </ion-option>
+        </ion-select>
+      </ion-item>
+      <div class="linha"></div>
+      <button ion-button full (click)="okMot()">OK</button>
+    </div>
+  </div>
+
+
+</ion-content>

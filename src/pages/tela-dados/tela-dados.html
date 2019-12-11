@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-navbar>
+    <h2 class="featured-text" *ngIf="tela == 'MENSAL'"> Cargas do Mês - {{nome_tela_mes}} </h2>
+    <h2 class="featured-text" *ngIf="cliente"> Cargas - {{cliente}}</h2>
+    <h2 class="featured-text" *ngIf="motorista"> Carregados por - {{motorista}} </h2>
+    <h2 class="featured-text" *ngIf="data_dia"> Cargas do dia - {{data_dia}} </h2>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="tela == 'MENSAL'">
+    <ion-list>
+      <ion-item *ngFor="let item of diario" (click)="presentLoadingText(item)">
+        <p>{{item.Data_Programada}}</p>
+        <h2><b>{{item.Cliente}}</b></h2>
+        <p>
+          {{item.Cidade_Origem}}/{{item.Uf_Origem}}&nbsp;X&nbsp;{{item.Cidade_Destino}}/{{item.Uf_Destino}}
+        </p>
+        <p>Peso Carregado:&nbsp;{{item.Peso_Carregado}}&nbsp;Ton</p>
+        <button ion-button clear item-end>Sobre</button>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div *ngIf="cliente">
+    <div class="dados">
+      <ion-list>
+        <ion-item *ngFor="let cli of cli_dados_mes" (click)="presentLoadingText(cli)">
+          <p>{{cli.Data_Programada}}</p>
+          <h2><b>{{cli.Cliente}}</b></h2>
+          <p>
+            {{cli.Cidade_Origem}}/{{cli.Uf_Origem}}&nbsp;X&nbsp;{{cli.Cidade_Destino}}/{{cli.Uf_Destino}}
+          </p>
+          <p>Peso Carregado:&nbsp;{{cli.Peso_Carregado}}&nbsp;Ton</p>
+          <button ion-button clear item-end>Sobre</button>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+
+  <div *ngIf="motorista">
+    <div class="dados">
+      <ion-list>
+        <ion-item *ngFor="let cli of mot_dados_mes" (click)="presentLoadingText(cli)">
+          <p>{{cli.Embarque_Efetivo}}</p>
+          <h2><b>{{cli.Motorista}}</b></h2>
+          <h3>{{cli.Cliente}}</h3>
+          <p>
+            {{cli.Cidade_Origem}}/{{cli.Uf_Origem}}&nbsp;X&nbsp;{{cli.Cidade_Destino}}/{{cli.Uf_Destino}}
+          </p>
+          <p>Peso Carregado:&nbsp;{{cli.Peso_Carregado}}&nbsp;Ton</p>
+          <button ion-button clear item-end>Sobre</button>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+
+  <div *ngIf="d_ontem_nome === 'ontem'">
+    <div class="dados">
+      <ion-list>
+        <ion-item *ngFor="let o of d_ontem" (click)="presentLoadingText(o)">
+          <h2><b>{{o.Cliente}}</b></h2>
+          <h3>{{o.Motorista}}</h3>
+          <p>
+            {{o.Cidade_Origem}}/{{o.Uf_Origem}}&nbsp;X&nbsp;{{o.Cidade_Destino}}/{{o.Uf_Destino}}
+          </p>
+          <p>Peso Carregado:&nbsp;{{o.Peso_Carregado}}&nbsp;Ton</p>
+          <button ion-button clear item-end>Sobre</button>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+  <div *ngIf="d_amanha_nome === 'amanha'">
+    <div class="dados">
+      <ion-list>
+        <ion-item *ngFor="let a of d_amanha" (click)="presentLoadingText(a)">
+          <h2><b>{{a.Cliente}}</b></h2>
+          <h3>Motorista contratado -&nbsp;<b>{{a.Motorista}}</b></h3>
+          <p>
+            {{a.Cidade_Origem}}/{{a.Uf_Origem}}&nbsp;X&nbsp;{{a.Cidade_Destino}}/{{a.Uf_Destino}}
+          </p>
+          <p>Peso Programado:&nbsp;{{a.Peso_Programado}}&nbsp;Ton</p>
+          <button ion-button clear item-end>Sobre</button>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+  <div *ngIf="data_escolhida === 'dataEscolhida'">
+      <div class="dados">
+        <ion-list>
+          <ion-item *ngFor="let a of dia_escolhida" (click)="presentLoadingText(a)">
+            <h2><b>{{a.Cliente}}</b></h2>
+            <h3>Motorista contratado -&nbsp;<b>{{a.Motorista}}</b></h3>
+            <p>
+              {{a.Cidade_Origem}}/{{a.Uf_Origem}}&nbsp;X&nbsp;{{a.Cidade_Destino}}/{{a.Uf_Destino}}
+            </p>
+            <p>Peso Programado:&nbsp;{{a.Peso_Programado}}&nbsp;Ton</p>
+            <button ion-button clear item-end>Sobre</button>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+
+</ion-content>

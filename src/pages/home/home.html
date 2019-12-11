@@ -1,0 +1,64 @@
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <img class="animated flip" src="assets/imgs/splash.png">
+    <div id="text" class="animated  lightSpeedIn">FOB</div>
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div>
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button (click)="girar()" ion-button icon-only>
+        <ion-icon *ngIf="this.screenOrientation.type === 'portrait-primary'" name="ios-phone-landscape-outline">
+        </ion-icon>
+        <ion-icon *ngIf="this.screenOrientation.type === 'landscape-primary'" name="ios-phone-portrait-outline">
+        </ion-icon>
+      </button>
+    </ion-buttons>
+    <h2 class="featured-text">Polimodallog Logística</h2>
+    <ion-buttons end>
+      <button (click)="info()" ion-button icon-only>
+        <ion-icon name="md-information-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-refresher (ionStart)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Puxe e atualize os dados"
+      refreshingSpinner="bubbles" refreshingText="Sicronizando...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <div class="header-banner">
+    <ion-slides class="home-slide" pager initialSlide=0 loop=true autoplay=2000 speed=2000>
+      <ion-slide *ngFor="let item of Img_PLMD">
+        <img src="{{item.img}}">
+      </ion-slide>
+    </ion-slides>
+    <h2 class="text">Cargas que temos hoje</h2>
+    <div class="hora_atual" *ngIf="data_Atual">{{data_Atual}}</div>
+
+    <div cards>
+      <div class="grid-full">
+        <ion-row>
+          <ion-col *ngFor="let c of dadosCli" class="animated fadeInUp">
+            <ion-card (click)="presentLoadingText(c)">
+              <div *ngIf="c.Embarque_Efetivo !== '' ">
+                <ion-icon style="zoom:1.8;" item-end color="secondary" name="md-checkmark-circle-outline"></ion-icon>
+                <h1>{{c.Cliente}}</h1>
+                <p>{{c.Cidade_Origem}} X {{c.Cidade_Destino}}</p>
+              </div>
+              <div *ngIf="c.Embarque_Efetivo  === ''">
+                <ion-icon style="zoom:1.8;" item-start color="danger" name="ios-pulse-outline"></ion-icon>
+                <h1>{{c.Cliente}}</h1>
+                <p>{{c.Cidade_Origem}} X {{c.Cidade_Destino}}</p>
+              </div>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,70 @@
+page-detalhes-cte {
+  .detalhes {
+      background-color: rgba(1, 5, 46, 0.877);
+    }
+    
+    .t{
+      padding-bottom: 5%; 
+    }
+  
+    ion-scroll {
+      height: 90%;
+    }
+  
+    .linha {
+      //  width: 100px;/*Altura da linha*/
+      border: 1px solid; /* Adiciona borda esquerda na div como ser fosse uma linha.*/
+      color: rgba(0, 0, 205, 0.13);
+      box-shadow: 0 2px 4px 0 rgba(2, 14, 36, 0.151);
+    }
+    .linha_mot {
+      border: 1px solid; /* Adiciona borda esquerda na div como ser fosse uma linha.*/
+      color: rgba(0, 0, 205, 0.13);
+      box-shadow: 0 2px 4px 0 rgba(2, 14, 36, 0.151);
+    }
+  
+    .linha_man {
+      border: 1px solid; /* Adiciona borda esquerda na div como ser fosse uma linha.*/
+      color: rgba(0, 0, 205, 0.13);
+      box-shadow: 0 2px 4px 0 rgba(2, 14, 36, 0.151);
+    }
+  
+    .dados {
+      top: 15px;
+    }
+  
+    .card {
+      h1 {
+        padding-top: 5px;
+        text-align: center;
+        font-weight: 450;
+        font-size: main-font-size;
+        font-size: rem;
+      }
+      h2 {
+        padding-top: 10px;
+        text-align: left;
+        font-weight: 450;
+        font-size: main-font-size;
+        font-size: 1.2rem;
+      }
+      p {
+        color: rgb(0, 0, 0);
+        text-align: left;
+        font-weight: 400;
+        font-size: 1.8rem;
+      }
+      label {
+        color: rgb(1, 8, 68);
+        text-align: left;
+        font-weight: 400;
+        font-size: 2.0rem;   
+      }
+    }
+    .bt{
+      width: 80%;
+      margin-left: 10%;
+      box-shadow: 0 2px 2px 0 rgba(30, 84, 184, 0.671);
+      margin-top: 1px;
+    }
+}

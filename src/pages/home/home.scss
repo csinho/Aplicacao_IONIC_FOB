@@ -1,0 +1,143 @@
+page-home {
+
+  .featured-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 90px 1px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+  }
+
+  .header-banner {
+    min-height: 800px;
+    background: linear-gradient(to bottom, #000 0%, rgb(2, 33, 168) 100%);
+  }
+
+  .slide-zoom {
+    height: 220px;
+  }
+
+  ion-slides {
+    padding-top: 25px;
+    height: 200px;
+  }
+
+  .toolbar-background {
+    background: black;
+    border: none !important;
+  }
+
+  .text {
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
+
+  ion-icon {
+    color: #fff;
+  }
+
+  .hora_atual {
+    text-align: center;
+    color: #fff;
+    font-weight: 250;
+    font-size: 2.3rem;
+    margin: -20px;
+    padding-top: 30px;
+  }
+
+  [cards] {
+    padding-top: 10%;
+    .grid-full ion-col {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: 5px 0;
+    }
+    .row {
+      padding: 10 10px;
+    }
+    .col {
+      padding: 10px 0;
+    }
+    .card {
+      margin: 0 5px;
+      width: calc(100% - 10px);
+      padding: 15px;
+      box-shadow: 0 2px 4px 0 rgba(4, 71, 194, 0.671);
+      border-radius: 4px;
+      background: linear-gradient(to top, #000 0%, #d5e3f7 100%);
+      h1 {
+        text-align: center;
+        font-weight: 450;
+        margin-top: -10%;
+        font-size: main-font-size;
+        font-size: 2rem;
+        color: rgb(7, 0, 0);
+      }
+      p {
+        color: rgba(92, 2, 2, 0.719);
+        text-align: center;
+        font-weight: 550;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  #custom-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background-image: url("/assets/imgs/banner_app.jpeg");
+    background-size: cover;
+    padding: 0px;
+  }
+
+  .flb {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #text {
+    position: fixed; // Forma de posicionamento - FIXA
+    top: 73%; // Distante 50% do topo da tela do usuário
+    left: 50%; // Distante 50% do lado esquerdo da tela do usuário
+    margin-top: -100px; // Margem negativa para o topo com a metade do valor da altura da imagem
+    margin-left: -25px; // Margem negativa para a esquerda com a metade do valor da largura da imagem
+
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+
+    animation-delay: 2s;
+  }
+  .Aligner-item {
+    max-width: 50%;
+  }
+  .Aligner-item--top {
+    align-self: flex-start;
+  }
+  .Aligner-item--bottom {
+    align-self: flex-end;
+  }
+  #custom-overlay img {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+    animation-delay: 1.5s;
+  }
+}

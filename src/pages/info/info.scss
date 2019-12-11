@@ -1,0 +1,54 @@
+page-info {
+  .info {
+    padding: 0px;
+    background-image: url("/assets/imgs/banner_app.jpeg");
+    background-size: cover;
+  }
+  .centralizar {
+    position: fixed; // Forma de posicionamento - FIXA
+    top: 40%; // Distante 50% do topo da tela do usuário
+    left: 50%; // Distante 50% do lado esquerdo da tela do usuário
+    margin-top: -100px; // Margem negativa para o topo com a metade do valor da altura da imagem
+    margin-left: -75px; // Margem negativa para a esquerda com a metade do valor da largura da imagem
+  }
+  .card-title {
+    position: fixed; // Forma de posicionamento - FIXA
+    top: 63%; // Distante 50% do topo da tela do usuário
+    left: 50%; // Distante 50% do lado esquerdo da tela do usuário
+    margin-top: -100px; // Margem negativa para o topo com a metade do valor da altura da imagem
+    margin-left: -30px; // Margem negativa para a esquerda com a metade do valor da largura da imagem
+
+    font-size: 2.5em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-subtitle {
+    position: fixed; // Forma de posicionamento - FIXA
+    top: 70%; // Distante 50% do topo da tela do usuário
+    left: 50%; // Distante 50% do lado esquerdo da tela do usuário
+    margin-top: -100px; // Margem negativa para o topo com a metade do valor da altura da imagem
+    margin-left: -30px; // Margem negativa para a esquerda com a metade do valor da largura da imagem
+
+   
+    font-size: 1.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card {
+    position: fixed; // Forma de posicionamento - FIXA
+    top: 85%; // Distante 50% do topo da tela do usuário
+    left: 50%; // Distante 50% do lado esquerdo da tela do usuário
+    margin-top: -100px; // Margem negativa para o topo com a metade do valor da altura da imagem
+    margin-left: -80px; // Margem negativa para a esquerda com a metade do valor da largura da imagem
+
+   
+    font-size: 1.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+}

@@ -1,0 +1,20 @@
+page-tela-dados {
+  .toolbar-background {
+    background: #0000cd;
+    border: none !important;
+  }
+  .featured-text {
+    font-weight: 700;
+    color: #fff;
+    font-size: 150%;
+    text-align: left;
+    font-family: sans-serif;
+  }
+  
+  .linha {
+    //  width: 100px;/*Altura da linha*/
+    border: 1px solid; /* Adiciona borda esquerda na div como ser fosse uma linha.*/
+    color: rgba(0, 0, 205, 0.507);
+    box-shadow: 0 2px 4px 0 rgba(2, 14, 36, 0.384);
+  }
+}
